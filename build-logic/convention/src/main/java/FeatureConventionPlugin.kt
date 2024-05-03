@@ -17,6 +17,7 @@ class FeatureConventionPlugin: Plugin<Project> {
             with(libs){
                 with(DependenciesName){
                     implementation(findLibrary(coroutines_core))
+                    implementation(findLibrary(androidx_lifecycle_view_model_ktx))
                 }
             }
 

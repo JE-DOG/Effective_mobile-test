@@ -5,12 +5,12 @@ import kotlinx.coroutines.flow.flow
 import ru.je_dog.effective_mobile.test.core.data.model.offer.toDomain
 import ru.je_dog.effective_mobile.test.core.domain.model.Offer
 
-class OfferNetworkDataSourceImpl(
+internal class OfferNetworkDataSourceImpl(
     private val offerApi: OfferApi
 ): OfferNetworkDataSource {
 
     override suspend fun getOffers(): List<Offer> {
-        val networkOffers = offerApi.getOffers()
+        val networkOffers = offerApi.getOffers().offers
             .map {  offerDto ->
                 offerDto.toDomain()
             }

@@ -28,6 +28,7 @@ include(":core:feature")
 //Feature
 include(":feature")
 include(":feature:placeholder")
+include(":feature:main-screen")
 
 //Data
 include(":data")

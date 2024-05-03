@@ -4,7 +4,7 @@ import android.content.Context
 import android.content.SharedPreferences
 import androidx.core.content.edit
 
-class MainScreenCacheStorageDataSourceImpl(
+internal class MainScreenCacheStorageDataSourceImpl(
     context: Context
 ): MainScreenCacheStorageDataSource {
 

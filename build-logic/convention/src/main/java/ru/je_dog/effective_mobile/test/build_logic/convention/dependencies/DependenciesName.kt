@@ -4,6 +4,7 @@ object DependenciesName {
 //AndroidX
     const val androidx_core_ktx = "androidx.core.ktx"
     const val androidx_lifecycle_runtime_ktx = "androidx.core.ktx"
+    const val androidx_lifecycle_view_model_ktx = "androidx.lifecycle.view.model.ktx"
 
 //Xml
     const val xml_material = "xml.material"

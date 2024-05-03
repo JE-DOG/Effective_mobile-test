@@ -33,6 +33,7 @@
             <option value="$PROJECT_DIR$/domain" />
             <option value="$PROJECT_DIR$/domain/main-screen" />
             <option value="$PROJECT_DIR$/feature" />
+            <option value="$PROJECT_DIR$/feature/main-screen" />
             <option value="$PROJECT_DIR$/feature/placeholder" />
           </set>
         </option>
