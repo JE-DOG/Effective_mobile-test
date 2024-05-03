@@ -35,3 +35,4 @@ include(":data")
 //Domain
 include(":domain")
 include(":domain:main-screen")
+include(":data:main-screen")
