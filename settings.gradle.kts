@@ -28,3 +28,10 @@ include(":core:feature")
 //Feature
 include(":feature")
 include(":feature:placeholder")
+
+//Data
+include(":data")
+
+//Domain
+include(":domain")
+include(":domain:main-screen")
