@@ -1,0 +1,64 @@
+[versions]
+#AndroidX
+    androidx-core = "1.12.0"
+    androidx-junit = "1.1.5"
+    androidx-lifecycle-runtime-ktx = "2.6.2"
+    androidx-core-ktx = "1.12.0"
+
+#Xml
+    adapter-delegate = "4.3.2"
+    appcompat = "1.6.1"
+    material = "1.11.0"
+    cicerone = "7.1"
+    constraing-layout = "2.1.4"
+
+#Http
+    retrofit = "2.11.0"
+
+#Other
+    dagger = "2.50"
+    agp = "8.1.0"
+    kotlin = "1.8.10"
+    junit = "4.13.2"
+    coroutines = "1.8.0"
+    androidx-test-ext-junit = "1.1.5"
+    espresso-core = "3.5.1"
+
+[libraries]
+#AndroidX
+    androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "androidx-core-ktx" }
+    androidx-lifecycle-runtime-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "androidx-lifecycle-runtime-ktx" }
+
+#Http
+    retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+    retrofit-converter = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
+
+#Xml
+    xml-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+    xml-material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+    xml-adapter-delegate = { module = "com.hannesdorfmann:adapterdelegates4", version.ref = "adapter-delegate" }
+    xml-cicerone = { module = "com.github.terrakok:cicerone", version.ref = "cicerone" }
+    xml-constraint-layout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraing-layout" }
+
+#DI (Dagger)
+    dagger-core = { module = "com.google.dagger:dagger", version.ref = "dagger" }
+    dagger-android = { module = "com.google.dagger:dagger-android", version.ref = "dagger" }
+    dagger-compiler = { module = "com.google.dagger:dagger-compiler", version.ref = "dagger" }
+
+#Asynchrony
+    kotlin-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
+
+#Junit
+    junit = { module = "junit:junit", version.ref = "junit" }
+
+# Dependencies of the included build-logic
+    android-gradlePlugin = { module = "com.android.tools.build:gradle", version.ref = "agp" }
+    kotlin-gradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+    androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-ext-junit" }
+    espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
+
+[plugins]
+    android-application = { id = "com.android.application", version.ref = "agp" }
+    android-library = { id = "com.android.library", version.ref = "agp" }
+    kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+    kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
