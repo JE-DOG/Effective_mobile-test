@@ -4,4 +4,6 @@ interface Coordinator {
 
     fun navigateToPlaceholder(screenName: String)
 
+    fun navigateToAviaTickets()
+
 }

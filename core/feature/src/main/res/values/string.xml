@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Effective_mobile_test</string>
+    
+    <!--  Screen names  -->
+    <string name="screen_name_avia_tickets">Авиабилеты</string>
+    <string name="screen_name_hotels">Отели</string>
+    <string name="screen_name_short">Короче</string>
+    <string name="screen_name_subscription">Подписки</string>
+    <string name="screen_name_profile">Профиль</string>
+</resources>
