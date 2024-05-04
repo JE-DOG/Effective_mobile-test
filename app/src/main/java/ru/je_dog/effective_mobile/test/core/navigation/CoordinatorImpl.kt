@@ -3,6 +3,7 @@ package ru.je_dog.effective_mobile.test.core.navigation
 import com.github.terrakok.cicerone.Router
 import com.github.terrakok.cicerone.androidx.FragmentScreen
 import ru.je_dog.effective_mobile.test.core.feature.navigation.Coordinator
+import ru.je_dog.effective_mobile.test.feature.main_screen.MainScreenFragment
 import ru.je_dog.effective_mobile.test.feature.placeholder.PlaceholderFragment
 
 class CoordinatorImpl(
@@ -15,13 +16,18 @@ class CoordinatorImpl(
     }
 
     override fun navigateToAviaTickets() {
-        val screen = getPlaceholderScreen("Авиабилеты")
+        val screen = getMainScreen()
         router.replaceScreen(screen)
     }
 
     private fun getPlaceholderScreen(screenName: String): FragmentScreen {
         return FragmentScreen {
             PlaceholderFragment.create(screenName)
+        }
+    }
+    private fun getMainScreen(): FragmentScreen {
+        return FragmentScreen {
+            MainScreenFragment()
         }
     }
 }

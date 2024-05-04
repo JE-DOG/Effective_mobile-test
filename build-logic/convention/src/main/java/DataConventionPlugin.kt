@@ -16,6 +16,7 @@ class DataConventionPlugin: Plugin<Project> {
                 with(libs){
                     implementation(findLibrary(retrofit))
                     implementation(findLibrary(retrofit_converter))
+                    implementation(findLibrary(coroutines_core))
                 }
             }
 
