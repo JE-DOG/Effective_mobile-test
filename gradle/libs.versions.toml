@@ -37,7 +37,7 @@
 #Xml
     xml-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
     xml-material = { group = "com.google.android.material", name = "material", version.ref = "material" }
-    xml-adapter-delegate = { module = "com.hannesdorfmann:adapterdelegates4", version.ref = "adapter-delegate" }
+    xml-adapter-delegate = { module = "com.hannesdorfmann:adapterdelegates4-kotlin-dsl-viewbinding", version.ref = "adapter-delegate" }
     xml-cicerone = { module = "com.github.terrakok:cicerone", version.ref = "cicerone" }
     xml-constraint-layout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraing-layout" }
 

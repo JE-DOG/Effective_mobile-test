@@ -27,14 +27,15 @@ internal class MainScreenViewModel @Inject constructor(
     private val _effect: MutableStateFlow<MainScreenEffect?> = MutableStateFlow(null)
     val effect: StateFlow<MainScreenEffect?> = _effect
 
+    fun setCityFrom(cityName: String){
+        mainScreenCacheRepository.setLastUserCityInput(cityName)
+    }
 
     fun getLastCityCityFromInput() {
         val lastCityFromInput = mainScreenCacheRepository.getLastUserCityInput()
 
-        _state.update {
-            it.copy(
-                cityFrom = lastCityFromInput
-            )
+        _effect.update {
+            MainScreenEffect.SetCityFromText(lastCityFromInput)
         }
     }
 

@@ -6,4 +6,8 @@ internal sealed interface MainScreenEffect {
         val message: String,
     ): MainScreenEffect
 
+    data class SetCityFromText(
+        val cityName: String,
+    ): MainScreenEffect
+
 }
