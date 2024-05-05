@@ -32,8 +32,10 @@ include(":feature:main-screen")
 
 //Data
 include(":data")
+include(":data:main-screen")
+include(":data:search-tickets")
 
 //Domain
 include(":domain")
 include(":domain:main-screen")
-include(":data:main-screen")
+include(":domain:search-tickets")

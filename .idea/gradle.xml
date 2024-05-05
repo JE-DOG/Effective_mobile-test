@@ -30,8 +30,10 @@
             <option value="$PROJECT_DIR$/core/feature" />
             <option value="$PROJECT_DIR$/data" />
             <option value="$PROJECT_DIR$/data/main-screen" />
+            <option value="$PROJECT_DIR$/data/search-tickets" />
             <option value="$PROJECT_DIR$/domain" />
             <option value="$PROJECT_DIR$/domain/main-screen" />
+            <option value="$PROJECT_DIR$/domain/search-tickets" />
             <option value="$PROJECT_DIR$/feature" />
             <option value="$PROJECT_DIR$/feature/main-screen" />
             <option value="$PROJECT_DIR$/feature/placeholder" />
