@@ -12,12 +12,17 @@ class CoordinatorImpl(
 
     override fun navigateToPlaceholder(screenName: String) {
         val screen = getPlaceholderScreen(screenName)
-        router.replaceScreen(screen)
+        router.navigateTo(screen)
     }
 
     override fun navigateToAviaTickets() {
         val screen = getMainScreen()
         router.replaceScreen(screen)
+    }
+
+    override fun navigateToSearchTickets(cityFrom: String, cityTo: String) {
+        val screen = getPlaceholderScreen("City from: $cityFrom\nCity to: $cityTo")
+        router.navigateTo(screen)
     }
 
     private fun getPlaceholderScreen(screenName: String): FragmentScreen {

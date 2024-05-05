@@ -6,4 +6,9 @@ interface Coordinator {
 
     fun navigateToAviaTickets()
 
+     fun navigateToSearchTickets(
+         cityFrom: String,
+         cityTo: String,
+     )
+
 }

@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="16dp"
+    android:paddingHorizontal="16dp"
+    android:background="@drawable/bg_round_square_gray_2"
+
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="38dp"
+        android:layout_height="5dp"
+        android:layout_gravity="center_horizontal"
+
+        android:background="@drawable/bg_round_square_gray_5"/>
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="24dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+
+        android:orientation="vertical"
+        android:background="@drawable/bg_round_square_gray_3">
+
+        <EditText
+            android:id="@+id/input_city_from"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="2dp"
+
+            android:drawableStart="@drawable/ic_plane"
+            android:drawablePadding="8dp"
+            android:text="Минск"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:background="#00000000"
+            android:enabled="false"/>
+
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginVertical="8dp"
+
+            app:dividerColor="#3E3F43"/>
+
+        <EditText
+            android:id="@+id/input_city_to"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="2dp"
+
+            android:drawableStart="@drawable/ic_lupa_white"
+            android:drawableEnd="@drawable/ic_cross"
+            android:drawablePadding="8dp"
+            android:hint="@string/main_screen_city_to_placeholder"
+            android:textColorHint="#9F9F9F"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:background="#00000000"/>
+
+    </LinearLayout>
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="24dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false">
+
+        <LinearLayout
+            android:id="@+id/btn_shortcut_difficult_way"
+
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:padding="1dp"
+
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:src="@drawable/ic_difficult_way"/>
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="8dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:text="@string/search_avia_ticket_screen_shortcut_difficult_direction"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btn_shortcut_somewhere"
+
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:padding="1dp"
+
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:src="@drawable/ic_world"/>
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="8dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:text="@string/search_avia_ticket_screen_shortcut_somewhere"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btn_shortcut_weekends"
+
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:padding="1dp"
+
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:src="@drawable/ic_calendar"/>
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="8dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:text="@string/search_avia_ticket_screen_shortcut_weekends"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btn_shortcut_hot_tickets"
+
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:padding="1dp"
+
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:src="@drawable/ic_fire"/>
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="8dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:text="@string/search_avia_ticket_screen_shortcut_hot_tickets"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="30dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcv_cities"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="24dp"
+        android:paddingBottom="16dp"
+
+        android:background="@drawable/bg_round_square_gray_3"
+        tools:listitem="@layout/item_city"
+        tools:itemCount="3"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+</LinearLayout>

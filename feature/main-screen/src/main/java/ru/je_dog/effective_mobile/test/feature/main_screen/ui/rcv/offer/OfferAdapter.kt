@@ -1,4 +1,4 @@
-package ru.je_dog.effective_mobile.test.feature.main_screen.rcv
+package ru.je_dog.effective_mobile.test.feature.main_screen.ui.rcv.offer
 
 import androidx.recyclerview.widget.DiffUtil
 import com.hannesdorfmann.adapterdelegates4.ListDelegationAdapter
