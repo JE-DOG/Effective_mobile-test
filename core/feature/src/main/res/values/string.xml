@@ -15,4 +15,16 @@
     <string name="main_screen_offer_price">от %s ₽</string>
     <string name="main_screen_city_from_placeholder">Откуда - Москва</string>
     <string name="main_screen_city_to_placeholder">Куда - Турция</string>
+    <!--  Search avia ticket  -->
+    <string name="search_avia_ticket_screen_city_to_placeholder">@string/main_screen_city_to_placeholder</string>
+    <string name="search_avia_ticket_screen_famous_path">Популярное направление</string>
+    <string name="search_avia_ticket_screen_shortcut_difficult_direction">Сложный маршрут</string>
+    <string name="search_avia_ticket_screen_shortcut_somewhere">Куда угодно</string>
+    <string name="search_avia_ticket_screen_shortcut_weekends">Выходные</string>
+    <string name="search_avia_ticket_screen_shortcut_hot_tickets">Горячие билеты</string>
+    <!--  Cities  -->
+    <string name="sochi">Сочи</string>
+    <string name="stambul">Стамбул</string>
+    <string name="phuket">Пхукет</string>
+
 </resources>

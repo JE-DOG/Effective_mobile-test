@@ -2,33 +2,36 @@ package ru.je_dog.effective_mobile.test.feature.main_screen
 
 import android.os.Bundle
 import android.text.Editable
-import android.util.Log
+import android.text.InputFilter
+import android.text.Spanned
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.annotation.DrawableRes
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
-import com.hannesdorfmann.adapterdelegates4.ListDelegationAdapter
-import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
-import ru.je_dog.effective_mobile.test.core.domain.model.Offer
+import ru.je_dog.effective_mobile.test.core.feature.ext.setInputFilterByRegex
+import ru.je_dog.effective_mobile.test.core.feature.navigation.Coordinator
 import ru.je_dog.effective_mobile.test.feature.main_screen.databinding.FragmentMainScreenBinding
-import ru.je_dog.effective_mobile.test.feature.main_screen.databinding.ItemOfferBinding
 import ru.je_dog.effective_mobile.test.feature.main_screen.di.DaggerMainScreenComponent
 import ru.je_dog.effective_mobile.test.feature.main_screen.di.deps.MainScreenComponentDepsProvider
-import ru.je_dog.effective_mobile.test.feature.main_screen.rcv.OfferAdapter
+import ru.je_dog.effective_mobile.test.feature.main_screen.ui.bottom_sheet.SearchTicketsBottomSheet
+import ru.je_dog.effective_mobile.test.feature.main_screen.ui.bottom_sheet.SearchTicketsBottomSheetDeps
+import ru.je_dog.effective_mobile.test.feature.main_screen.ui.rcv.offer.OfferAdapter
 import ru.je_dog.effective_mobile.test.feature.main_screen.vm.MainScreenEffect
 import ru.je_dog.effective_mobile.test.feature.main_screen.vm.MainScreenViewModel
 import javax.inject.Inject
 
-class MainScreenFragment: Fragment() {
+class MainScreenFragment: Fragment(), SearchTicketsBottomSheetDeps {
 
     @Inject
     internal lateinit var viewModel: MainScreenViewModel
+    @Inject
+    override lateinit var coordinator: Coordinator
 
     private lateinit var binding: FragmentMainScreenBinding
     private val mainScreenComponent by lazy {
@@ -66,17 +69,26 @@ class MainScreenFragment: Fragment() {
             adapter = offerAdapter.adapter
         }
         //Layout
-        inputCityFrom.addTextChangedListener { text: Editable? ->
-            text?.let {
-                viewModel.setCityFrom(text.toString())
+        inputCityFrom.apply {
+            setInputFilterByRegex()
+            addTextChangedListener { text: Editable? ->
+                text?.let {
+                    viewModel.setCityFrom(text.toString())
+                }
             }
         }
         inputCityTo.setOnClickListener {
-            //TODO
+            openSearchTicketBottomSheet()
         }
         //view model states
         collectState()
         collectEffect()
+    }
+
+    private fun openSearchTicketBottomSheet() {
+        val cityFrom = binding.inputCityFrom.text.toString()
+        val searchTicketsBottomSheet = SearchTicketsBottomSheet.create(cityFrom)
+        searchTicketsBottomSheet.show(childFragmentManager,null)
     }
 
     private fun collectState() {
@@ -104,6 +116,7 @@ class MainScreenFragment: Fragment() {
             }
             .launchIn(lifecycleScope)
     }
+
 
 
 }
