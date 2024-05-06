@@ -4,6 +4,7 @@ import android.app.Application
 import com.github.terrakok.cicerone.Cicerone
 import ru.je_dog.effective_mobile.test.di.DaggerAppComponent
 import ru.je_dog.effective_mobile.test.feature.main_screen.di.deps.MainScreenComponentDepsProvider
+import ru.je_dog.effective_mobile.test.feature.search_tickets.di.deps.SearchTicketsComponentDepsProvider
 
 class App: Application() {
 
@@ -26,6 +27,7 @@ class App: Application() {
     private fun initDi() {
         with(appComponent){
             MainScreenComponentDepsProvider.deps = this
+            SearchTicketsComponentDepsProvider.deps = this
         }
     }
 

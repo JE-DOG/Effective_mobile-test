@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:paddingTop="16dp"
     android:paddingHorizontal="16dp"
-    android:background="@drawable/bg_round_square_gray_2"
+    android:background="@drawable/bg_round_square_gray_1"
 
     android:orientation="vertical">
 

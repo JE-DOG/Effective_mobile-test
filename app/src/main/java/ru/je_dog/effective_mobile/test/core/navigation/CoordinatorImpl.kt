@@ -5,6 +5,7 @@ import com.github.terrakok.cicerone.androidx.FragmentScreen
 import ru.je_dog.effective_mobile.test.core.feature.navigation.Coordinator
 import ru.je_dog.effective_mobile.test.feature.main_screen.MainScreenFragment
 import ru.je_dog.effective_mobile.test.feature.placeholder.PlaceholderFragment
+import ru.je_dog.effective_mobile.test.feature.search_tickets.SearchTicketsFragment
 
 class CoordinatorImpl(
     private val router: Router
@@ -21,8 +22,16 @@ class CoordinatorImpl(
     }
 
     override fun navigateToSearchTickets(cityFrom: String, cityTo: String) {
-        val screen = getPlaceholderScreen("City from: $cityFrom\nCity to: $cityTo")
+        val screen = getSearchTicketsScreen(
+            cityTo = cityTo,
+            cityFrom = cityFrom
+        )
         router.navigateTo(screen)
+    }
+
+    override fun navigateToTicketsList(cityFrom: String, cityTo: String) {
+        val screenName = "From: $cityFrom\nTo: $cityTo"
+        router.navigateTo(getPlaceholderScreen(screenName))
     }
 
     private fun getPlaceholderScreen(screenName: String): FragmentScreen {
@@ -33,6 +42,22 @@ class CoordinatorImpl(
     private fun getMainScreen(): FragmentScreen {
         return FragmentScreen {
             MainScreenFragment()
+        }
+    }
+
+    override fun back() {
+        router.exit()
+    }
+
+    private fun getSearchTicketsScreen(
+        cityTo: String,
+        cityFrom: String,
+    ): FragmentScreen {
+        return FragmentScreen {
+            SearchTicketsFragment.create(
+                cityFrom = cityFrom,
+                cityTo = cityTo
+            )
         }
     }
 }

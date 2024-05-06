@@ -7,6 +7,7 @@ import dagger.Component
 import ru.je_dog.effective_mobile.test.MainActivity
 import ru.je_dog.effective_mobile.test.core.di.CommonModule
 import ru.je_dog.effective_mobile.test.feature.main_screen.di.deps.MainScreenComponentDeps
+import ru.je_dog.effective_mobile.test.feature.search_tickets.di.deps.SearchTicketsComponentDeps
 
 @AppComponentScope
 @Component(
@@ -14,7 +15,9 @@ import ru.je_dog.effective_mobile.test.feature.main_screen.di.deps.MainScreenCom
         CommonModule::class,
     ]
 )
-interface AppComponent: MainScreenComponentDeps {
+interface AppComponent:
+    MainScreenComponentDeps,
+    SearchTicketsComponentDeps {
 
     fun inject(mainActivity: MainActivity)
 

@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "ru.je_dog.effective_mobile.test.data.search-tickets"
+    namespace = "ru.je_dog.effective_mobile.test.data.search_tickets"
 }
 dependencies {
     implementation(project(":domain:search-tickets"))

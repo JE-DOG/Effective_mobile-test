@@ -29,6 +29,7 @@ include(":core:feature")
 include(":feature")
 include(":feature:placeholder")
 include(":feature:main-screen")
+include(":feature:search-tickets")
 
 //Data
 include(":data")
