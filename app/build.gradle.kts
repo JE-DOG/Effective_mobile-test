@@ -24,8 +24,8 @@ dependencies {
         }
         with(feature){
             implementation(mainScreen)
+            implementation(searchTickets)
+            implementation(placeholder)
         }
-
-        implementation(feature.placeholder)
     }
 }

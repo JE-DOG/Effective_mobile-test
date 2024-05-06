@@ -11,4 +11,11 @@ interface Coordinator {
          cityTo: String,
      )
 
+     fun navigateToTicketsList(
+         cityFrom: String,
+         cityTo: String,
+     )
+
+     fun back()
+
 }

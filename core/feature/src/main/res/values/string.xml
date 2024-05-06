@@ -26,5 +26,12 @@
     <string name="sochi">Сочи</string>
     <string name="stambul">Стамбул</string>
     <string name="phuket">Пхукет</string>
-
+    <!--  Search tickets screen  -->
+    <string name="search_tickets_screen_back">Обратно</string>
+    <string name="search_tickets_screen_forward_reels">Прямые рельсы</string><!--  WTF  -->
+    <string name="search_tickets_screen_show_all">Показать все</string>
+    <string name="search_tickets_screen_passenger_placeholder">1,эконом</string>
+    <string name="search_tickets_screen_filters">Фильтры</string>
+    <string name="search_tickets_screen_price">%s ₽</string>
+    <string name="search_tickets_screen_show_all_tickets">Посмотреть все билеты</string>
 </resources>

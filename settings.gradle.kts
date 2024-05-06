@@ -29,11 +29,14 @@ include(":core:feature")
 include(":feature")
 include(":feature:placeholder")
 include(":feature:main-screen")
+include(":feature:search-tickets")
 
 //Data
 include(":data")
+include(":data:main-screen")
+include(":data:search-tickets")
 
 //Domain
 include(":domain")
 include(":domain:main-screen")
-include(":data:main-screen")
+include(":domain:search-tickets")
