@@ -5,6 +5,7 @@ import com.github.terrakok.cicerone.Cicerone
 import ru.je_dog.effective_mobile.test.di.DaggerAppComponent
 import ru.je_dog.effective_mobile.test.feature.main_screen.di.deps.MainScreenComponentDepsProvider
 import ru.je_dog.effective_mobile.test.feature.search_tickets.di.deps.SearchTicketsComponentDepsProvider
+import ru.je_dog.effective_mobile.test.feature.tickets_list.di.deps.TicketsListComponentDepsProvider
 
 class App: Application() {
 
@@ -28,6 +29,7 @@ class App: Application() {
         with(appComponent){
             MainScreenComponentDepsProvider.deps = this
             SearchTicketsComponentDepsProvider.deps = this
+            TicketsListComponentDepsProvider.deps = this
         }
     }
 
