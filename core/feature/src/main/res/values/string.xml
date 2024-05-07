@@ -37,6 +37,6 @@
     <!--  Tickets list screen  -->
     <string name="tickets_list_screen_description_placeholder">23 февраля, 1 пассажир</string>
     <string name="tickets_list_screen_city_from_and_city_to">%s-%s</string>
-    <string name="tickets_list_screen_in_the_way">%s в пути</string>
+    <string name="tickets_list_screen_in_the_way">%sч в пути</string>
     <string name="tickets_list_screen_without_transfer">/ Без пересадок</string>
 </resources>
