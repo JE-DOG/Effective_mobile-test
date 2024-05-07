@@ -26,6 +26,7 @@ dependencies {
             implementation(mainScreen)
             implementation(searchTickets)
             implementation(placeholder)
+            implementation(ticketsList)
         }
     }
 }

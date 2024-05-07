@@ -6,6 +6,7 @@ import ru.je_dog.effective_mobile.test.core.feature.navigation.Coordinator
 import ru.je_dog.effective_mobile.test.feature.main_screen.MainScreenFragment
 import ru.je_dog.effective_mobile.test.feature.placeholder.PlaceholderFragment
 import ru.je_dog.effective_mobile.test.feature.search_tickets.SearchTicketsFragment
+import ru.je_dog.effective_mobile.test.feature.tickets_list.TicketsListFragment
 
 class CoordinatorImpl(
     private val router: Router
@@ -30,8 +31,8 @@ class CoordinatorImpl(
     }
 
     override fun navigateToTicketsList(cityFrom: String, cityTo: String) {
-        val screenName = "From: $cityFrom\nTo: $cityTo"
-        router.navigateTo(getPlaceholderScreen(screenName))
+        val screen = getTicketsListScreen(cityFrom = cityFrom, cityTo = cityTo)
+        router.navigateTo(screen)
     }
 
     private fun getPlaceholderScreen(screenName: String): FragmentScreen {
@@ -55,6 +56,17 @@ class CoordinatorImpl(
     ): FragmentScreen {
         return FragmentScreen {
             SearchTicketsFragment.create(
+                cityFrom = cityFrom,
+                cityTo = cityTo
+            )
+        }
+    }
+    private fun getTicketsListScreen(
+        cityTo: String,
+        cityFrom: String,
+    ): FragmentScreen {
+        return FragmentScreen {
+            TicketsListFragment.create(
                 cityFrom = cityFrom,
                 cityTo = cityTo
             )

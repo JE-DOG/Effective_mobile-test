@@ -8,6 +8,7 @@ import ru.je_dog.effective_mobile.test.MainActivity
 import ru.je_dog.effective_mobile.test.core.di.CommonModule
 import ru.je_dog.effective_mobile.test.feature.main_screen.di.deps.MainScreenComponentDeps
 import ru.je_dog.effective_mobile.test.feature.search_tickets.di.deps.SearchTicketsComponentDeps
+import ru.je_dog.effective_mobile.test.feature.tickets_list.di.deps.TicketsListComponentDeps
 
 @AppComponentScope
 @Component(
@@ -17,7 +18,8 @@ import ru.je_dog.effective_mobile.test.feature.search_tickets.di.deps.SearchTick
 )
 interface AppComponent:
     MainScreenComponentDeps,
-    SearchTicketsComponentDeps {
+    SearchTicketsComponentDeps,
+    TicketsListComponentDeps {
 
     fun inject(mainActivity: MainActivity)
 
