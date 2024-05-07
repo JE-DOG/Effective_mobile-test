@@ -9,12 +9,14 @@ import ru.je_dog.effective_mobile.test.core.feature.navigation.Coordinator
 import ru.je_dog.effective_mobile.test.core.utill.ext.appComponent
 import ru.je_dog.effective_mobile.test.feature.placeholder.PlaceholderFragment
 import ru.je_dog.test.effective_mobile.R
+import ru.je_dog.test.effective_mobile.databinding.ActivityMainBinding
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
 
     @Inject
     lateinit var coordinator: Coordinator
+    lateinit var binding: ActivityMainBinding
 
     private val navigator = AppNavigator(
         activity = this,
@@ -25,9 +27,31 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         appComponent.inject(this)
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        coordinator.navigateToPlaceholder("Placeholder")
+        initUi()
+    }
+
+    private fun initUi() = with(binding) {
+        with(bottomNav){
+            itemIconTintList = null
+
+            coordinator.navigateToAviaTickets()
+            setOnItemSelectedListener {  menuItem ->
+                when(menuItem.itemId) {
+                    R.id.bottom_nav_item_avia_tickets -> {
+                        coordinator.navigateToAviaTickets()
+                    }
+
+                    else -> {
+                        coordinator.navigateToPlaceholder(menuItem.title.toString())
+                    }
+                }
+
+                return@setOnItemSelectedListener true
+            }
+        }
     }
 
     override fun onResume() {
@@ -36,7 +60,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onPause() {
-        navigatorHolder.setNavigator(navigator)
+        navigatorHolder.removeNavigator()
         super.onPause()
     }
 }

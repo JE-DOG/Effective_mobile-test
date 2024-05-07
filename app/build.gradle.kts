@@ -7,7 +7,7 @@ android {
     namespace = "ru.je_dog.test.effective_mobile"
 
     defaultConfig {
-        buildConfigField("String","BASE_URL","\"https://drive.google.com/\"") //https://drive.google.com/uc?export=json&id=1o1nX3uFISrG1gR-jr_03Qlu4_KEZWhav
+        buildConfigField("String","BASE_URL","\"https://drive.usercontent.google.com/\"") //https://drive.usercontent.google.com/download?id=1o1nX3uFISrG1gR-jr_03Qlu4_KEZWhav
     }
     buildFeatures {
         buildConfig = true
@@ -22,7 +22,11 @@ dependencies {
             implementation(data)
             implementation(feature)
         }
-
-        implementation(feature.placeholder)
+        with(feature){
+            implementation(mainScreen)
+            implementation(searchTickets)
+            implementation(placeholder)
+            implementation(ticketsList)
+        }
     }
 }

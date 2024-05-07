@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="BottomNavSelectedText" parent="TextAppearance.AppCompat.Body1">
+        <item name="android:textSize">10sp</item>
+        <item name="android:color">?attr/colorPrimary</item>
+    </style>
+    <style name="BottomNavUnSelectedText" parent="TextAppearance.AppCompat.Body1">
+        <item name="android:textSize">10sp</item>
+        <item name="android:color">@color/white</item>
+    </style>
+</resources>

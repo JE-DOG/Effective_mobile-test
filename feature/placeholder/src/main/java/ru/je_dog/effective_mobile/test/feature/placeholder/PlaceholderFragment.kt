@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import ru.je_dog.effective_mobile.test.feature.placeholder.databinding.FragmentPlaceholderBinding
 
-class PlaceholderFragment private constructor(): Fragment() {
+class PlaceholderFragment: Fragment() {
 
     lateinit var binding: FragmentPlaceholderBinding
 

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Effective_mobile_test</string>
+    
+    <!--  Screen names  -->
+    <string name="screen_name_avia_tickets">Авиабилеты</string>
+    <string name="screen_name_hotels">Отели</string>
+    <string name="screen_name_short">Короче</string>
+    <string name="screen_name_subscription">Подписки</string>
+    <string name="screen_name_profile">Профиль</string>
+    
+    <!--  Main screen  -->
+    <string name="main_screen_title">Поиск дешевых авиабилетов</string>
+    <string name="main_screen_offer_title">Музыкально отлететь</string>
+    <string name="main_screen_offer_price">от %s ₽</string>
+    <string name="main_screen_city_from_placeholder">Откуда - Москва</string>
+    <string name="main_screen_city_to_placeholder">Куда - Турция</string>
+    <!--  Search avia ticket  -->
+    <string name="search_avia_ticket_screen_city_to_placeholder">@string/main_screen_city_to_placeholder</string>
+    <string name="search_avia_ticket_screen_famous_path">Популярное направление</string>
+    <string name="search_avia_ticket_screen_shortcut_difficult_direction">Сложный маршрут</string>
+    <string name="search_avia_ticket_screen_shortcut_somewhere">Куда угодно</string>
+    <string name="search_avia_ticket_screen_shortcut_weekends">Выходные</string>
+    <string name="search_avia_ticket_screen_shortcut_hot_tickets">Горячие билеты</string>
+    <!--  Cities  -->
+    <string name="sochi">Сочи</string>
+    <string name="stambul">Стамбул</string>
+    <string name="phuket">Пхукет</string>
+    <!--  Search tickets screen  -->
+    <string name="search_tickets_screen_back">Обратно</string>
+    <string name="search_tickets_screen_forward_reels">Прямые рельсы</string><!--  WTF  -->
+    <string name="search_tickets_screen_show_all">Показать все</string>
+    <string name="search_tickets_screen_passenger_placeholder">1,эконом</string>
+    <string name="search_tickets_screen_filters">Фильтры</string>
+    <string name="search_tickets_screen_price">%s ₽</string>
+    <string name="search_tickets_screen_show_all_tickets">Посмотреть все билеты</string>
+    <!--  Tickets list screen  -->
+    <string name="tickets_list_screen_description_placeholder">23 февраля, 1 пассажир</string>
+    <string name="tickets_list_screen_city_from_and_city_to">%s-%s</string>
+    <string name="tickets_list_screen_in_the_way">%s в пути</string>
+    <string name="tickets_list_screen_without_transfer">/ Без пересадок</string>
+</resources>

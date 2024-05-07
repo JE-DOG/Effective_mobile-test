@@ -7,6 +7,13 @@ android {
 }
 
 dependencies {
+    with(projects.core){
+        implementation(this)
+        implementation(domain)
+    }
     implementation( project(":core") )
     implementation( project(":core:domain") )
+    with(libs.retrofit){
+        implementation(converter)
+    }
 }

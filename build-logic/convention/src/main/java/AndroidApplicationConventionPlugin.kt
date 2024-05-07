@@ -55,7 +55,9 @@ class AndroidApplicationConventionPlugin: Plugin<Project> {
                     excludes += "/META-INF/{AL2.0,LGPL2.1}"
                 }
             }
-
+            buildFeatures {
+                viewBinding = true
+            }
         }
 
         dependencies {
@@ -63,6 +65,7 @@ class AndroidApplicationConventionPlugin: Plugin<Project> {
                 with(DependenciesName){
                     implementation(findLibrary(androidx_core_ktx))
                     implementation(findLibrary(androidx_lifecycle_runtime_ktx))
+                    implementation(findLibrary(androidx_lifecycle_view_model_ktx))
                     //Dagger
                     implementation(findLibrary(dagger_android))
                     kapt(findLibrary(dagger_compiler))

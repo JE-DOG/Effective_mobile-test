@@ -4,4 +4,18 @@ interface Coordinator {
 
     fun navigateToPlaceholder(screenName: String)
 
+    fun navigateToAviaTickets()
+
+     fun navigateToSearchTickets(
+         cityFrom: String,
+         cityTo: String,
+     )
+
+     fun navigateToTicketsList(
+         cityFrom: String,
+         cityTo: String,
+     )
+
+     fun back()
+
 }

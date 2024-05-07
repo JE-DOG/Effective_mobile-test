@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
@@ -27,8 +28,19 @@
             <option value="$PROJECT_DIR$/core/data" />
             <option value="$PROJECT_DIR$/core/domain" />
             <option value="$PROJECT_DIR$/core/feature" />
+            <option value="$PROJECT_DIR$/data" />
+            <option value="$PROJECT_DIR$/data/main-screen" />
+            <option value="$PROJECT_DIR$/data/search-tickets" />
+            <option value="$PROJECT_DIR$/data/tickets-list" />
+            <option value="$PROJECT_DIR$/domain" />
+            <option value="$PROJECT_DIR$/domain/main-screen" />
+            <option value="$PROJECT_DIR$/domain/search-tickets" />
+            <option value="$PROJECT_DIR$/domain/tickets-list" />
             <option value="$PROJECT_DIR$/feature" />
+            <option value="$PROJECT_DIR$/feature/main-screen" />
             <option value="$PROJECT_DIR$/feature/placeholder" />
+            <option value="$PROJECT_DIR$/feature/search-tickets" />
+            <option value="$PROJECT_DIR$/feature/tickets-list" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="false" />

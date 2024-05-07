@@ -2,7 +2,7 @@
 #AndroidX
     androidx-core = "1.12.0"
     androidx-junit = "1.1.5"
-    androidx-lifecycle-runtime-ktx = "2.6.2"
+    androidx-lifecycle = "2.6.2"
     androidx-core-ktx = "1.12.0"
 
 #Xml
@@ -27,7 +27,8 @@
 [libraries]
 #AndroidX
     androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "androidx-core-ktx" }
-    androidx-lifecycle-runtime-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "androidx-lifecycle-runtime-ktx" }
+    androidx-lifecycle-runtime-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "androidx-lifecycle" }
+    androidx-lifecycle-view-model-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "androidx-lifecycle" }
 
 #Http
     retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
@@ -36,7 +37,7 @@
 #Xml
     xml-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
     xml-material = { group = "com.google.android.material", name = "material", version.ref = "material" }
-    xml-adapter-delegate = { module = "com.hannesdorfmann:adapterdelegates4", version.ref = "adapter-delegate" }
+    xml-adapter-delegate = { module = "com.hannesdorfmann:adapterdelegates4-kotlin-dsl-viewbinding", version.ref = "adapter-delegate" }
     xml-cicerone = { module = "com.github.terrakok:cicerone", version.ref = "cicerone" }
     xml-constraint-layout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraing-layout" }
 
