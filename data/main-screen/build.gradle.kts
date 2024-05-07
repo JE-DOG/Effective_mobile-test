@@ -7,5 +7,5 @@ android {
     namespace = "ru.je_dog.effective_mobile.test.data.main_screen"
 }
 dependencies {
-    implementation(project(":domain:main-screen"))
+    implementation(projects.domain.mainScreen)
 }
