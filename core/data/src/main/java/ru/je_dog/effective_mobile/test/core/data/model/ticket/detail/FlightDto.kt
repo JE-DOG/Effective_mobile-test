@@ -12,3 +12,8 @@ fun FlightDto.toDomain() = Flight(
     date = LocalDateTime.parse(date),
     airport = airport
 )
+
+fun Flight.toDto() = FlightDto(
+    date = date.toString(),
+    airport = airport
+)
