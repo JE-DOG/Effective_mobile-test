@@ -15,18 +15,16 @@ class TicketDetailRepositoryImpl(
 ): TicketDetailRepository {
 
     override fun getTicketsDetail(): Flow<List<TicketDetail>> = flow {
-        coroutineScope {
-            val storageTicketsDetail = async {
-                storageDataSource.getTicketsDetail()
-            }
-            val networkTicketsDetail = async {
-                ticketDetailNetworkDataSource.getTicketsDetail()
-            }
-            emit(storageTicketsDetail.await())
+        val storageTicketsDetail = storageDataSource.getTicketsDetail()
 
-            if (storageTicketsDetail.await() != networkTicketsDetail.await()){
-                emit(networkTicketsDetail.await())
-                storageDataSource.addTicketsDetail(networkTicketsDetail.await())
+        emit(storageTicketsDetail)
+
+        runCatching {
+            val networkTicketsDetail = ticketDetailNetworkDataSource.getTicketsDetail()
+
+            if (storageTicketsDetail != networkTicketsDetail){
+                emit(networkTicketsDetail)
+                storageDataSource.addTicketsDetail(networkTicketsDetail)
             }
         }
     }

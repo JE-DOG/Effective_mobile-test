@@ -1,5 +1,6 @@
 package ru.je_dog.effective_mobile.test.data.main_screen.offer
 
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import ru.je_dog.effective_mobile.test.core.domain.model.Offer
@@ -14,10 +15,12 @@ class OfferRepositoryImpl(
     override fun getOffers(): Flow<List<Offer>> = flow {
         val storageOffers = storageDataSource.getOffers()
         emit(storageOffers)
-        val networkOffers = networkDataSource.getOffers()
-        if (storageOffers != networkOffers){
-            emit(networkOffers)
-            storageDataSource.addOffers(networkOffers)
+        runCatching {
+            val networkOffers = networkDataSource.getOffers()
+            if (storageOffers != networkOffers){
+                emit(networkOffers)
+                storageDataSource.addOffers(networkOffers)
+            }
         }
     }
 }

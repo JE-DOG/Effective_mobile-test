@@ -1,7 +1,5 @@
 package ru.je_dog.effective_mobile.test.data.search_tickets.offer
 
-import kotlinx.coroutines.async
-import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import ru.je_dog.effective_mobile.test.core.domain.model.Ticket
@@ -14,18 +12,15 @@ class TicketRepositoryImpl(
     private val storageDataSource: TicketStorageDataSource,
 ): TicketRepository {
     override fun getTickets(): Flow<List<Ticket>> = flow {
-        coroutineScope {
-            val storageTickets = async {
-                storageDataSource.getTickets()
-            }
-            val networkTickets = async {
-                networkDataSource.getTickets()
-            }
-            emit(storageTickets.await())
+        val storageTickets = storageDataSource.getTickets()
+        emit(storageTickets)
 
-            if (storageTickets.await() != networkTickets.await()){
-                emit(networkTickets.await())
-                storageDataSource.addTickets(networkTickets.await())
+        runCatching {
+            val networkTickets = networkDataSource.getTickets()
+
+            if (storageTickets != networkTickets){
+                emit(networkTickets)
+                storageDataSource.addTickets(networkTickets)
             }
         }
     }
