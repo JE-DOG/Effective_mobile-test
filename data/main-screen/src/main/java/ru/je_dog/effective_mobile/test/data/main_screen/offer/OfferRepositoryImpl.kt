@@ -17,7 +17,7 @@ class OfferRepositoryImpl(
         val networkOffers = networkDataSource.getOffers()
         if (storageOffers != networkOffers){
             emit(networkOffers)
-            storageDataSource.setOffers(networkOffers)
+            storageDataSource.addOffers(networkOffers)
         }
     }
 }

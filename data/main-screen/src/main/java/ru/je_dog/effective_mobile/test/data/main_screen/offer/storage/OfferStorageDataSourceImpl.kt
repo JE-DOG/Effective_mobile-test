@@ -9,8 +9,7 @@ class OfferStorageDataSourceImpl(
     private val offerDao: OfferDao
 ): OfferStorageDataSource {
 
-    override suspend fun setOffers(offers: List<Offer>) {
-        offerDao.deleteTable()
+    override suspend fun addOffers(offers: List<Offer>) {
         offerDao.addOffers(
             offers = offers.map { it.toEntity() }
         )
