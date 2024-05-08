@@ -30,16 +30,16 @@ include(":feature")
 include(":feature:placeholder")
 include(":feature:main-screen")
 include(":feature:search-tickets")
+include(":feature:tickets-list")
 
 //Data
 include(":data")
 include(":data:main-screen")
 include(":data:search-tickets")
+include(":data:tickets-list")
 
 //Domain
 include(":domain")
 include(":domain:main-screen")
 include(":domain:search-tickets")
 include(":domain:tickets-list")
-include(":data:tickets-list")
-include(":feature:tickets-list")

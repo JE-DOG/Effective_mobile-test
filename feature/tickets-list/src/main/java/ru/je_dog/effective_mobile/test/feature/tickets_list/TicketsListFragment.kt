@@ -1,18 +1,14 @@
 package ru.je_dog.effective_mobile.test.feature.tickets_list
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
-import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
-import ru.je_dog.effective_mobile.test.core.data.model.offer.ticket_details.FlightDto
-import ru.je_dog.effective_mobile.test.core.data.model.offer.ticket_details.toDomain
 import ru.je_dog.effective_mobile.test.core.feature.navigation.Coordinator
 import ru.je_dog.effective_mobile.test.feature.tickets_list.databinding.FragmentTicketsListBinding
 import ru.je_dog.effective_mobile.test.feature.tickets_list.di.DaggerTicketsListComponent
