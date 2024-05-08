@@ -22,6 +22,11 @@ object DependenciesName {
     const val retrofit = "retrofit"
     const val retrofit_converter = "retrofit.converter"
 
+//Database
+    const val room = "room"
+    const val room_ktx = "room.ktx"
+    const val room_compiler = "room.compiler"
+
 //Tests
     const val jUnit = "junit"
 

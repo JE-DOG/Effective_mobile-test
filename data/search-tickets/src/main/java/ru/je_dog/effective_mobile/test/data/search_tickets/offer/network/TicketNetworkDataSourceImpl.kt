@@ -1,6 +1,6 @@
 package ru.je_dog.effective_mobile.test.data.search_tickets.offer.network
 
-import ru.je_dog.effective_mobile.test.core.data.model.offer.toDomain
+import ru.je_dog.effective_mobile.test.core.data.model.ticket.toDomain
 import ru.je_dog.effective_mobile.test.core.domain.model.Ticket
 
 internal class TicketNetworkDataSourceImpl(

@@ -11,9 +11,8 @@ dependencies {
         implementation(this)
         implementation(domain)
     }
-    implementation( project(":core") )
-    implementation( project(":core:domain") )
-    with(libs.retrofit){
-        implementation(converter)
+    with(libs){
+        implementation(retrofit.converter)
+        implementation(room)
     }
 }

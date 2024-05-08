@@ -1,6 +1,7 @@
 package ru.je_dog.effective_mobile.test.data.main_screen.di
 
 import android.content.Context
+import androidx.room.Room
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
@@ -12,6 +13,10 @@ import ru.je_dog.effective_mobile.test.data.main_screen.offer.OfferRepositoryImp
 import ru.je_dog.effective_mobile.test.data.main_screen.offer.network.OfferApi
 import ru.je_dog.effective_mobile.test.data.main_screen.offer.network.OfferNetworkDataSource
 import ru.je_dog.effective_mobile.test.data.main_screen.offer.network.OfferNetworkDataSourceImpl
+import ru.je_dog.effective_mobile.test.data.main_screen.offer.storage.OfferStorageDataSource
+import ru.je_dog.effective_mobile.test.data.main_screen.offer.storage.OfferStorageDataSourceImpl
+import ru.je_dog.effective_mobile.test.data.main_screen.offer.storage.room.OfferDao
+import ru.je_dog.effective_mobile.test.data.main_screen.offer.storage.room.OfferRoomDatabase
 import ru.je_dog.effective_mobile.test.domain.main_screen.MainScreenCacheRepository
 import ru.je_dog.effective_mobile.test.domain.main_screen.OfferRepository
 
@@ -36,10 +41,12 @@ class MainScreenDataModule {
 
     @Provides
     fun provideOfferRepository(
-        offerNetworkDataSource: OfferNetworkDataSource
+        offerNetworkDataSource: OfferNetworkDataSource,
+        offerStorageDataSource: OfferStorageDataSource,
     ): OfferRepository {
         return OfferRepositoryImpl(
-            offerNetworkDataSource
+            networkDataSource = offerNetworkDataSource,
+            storageDataSource = offerStorageDataSource
         )
     }
 
@@ -59,6 +66,33 @@ class MainScreenDataModule {
         return MainScreenCacheRepositoryImpl(
             mainScreenCacheStorageDataSource
         )
+    }
+
+    @Provides
+    fun provideOfferStorageDataSource(
+        offerDao: OfferDao
+    ): OfferStorageDataSource {
+        return OfferStorageDataSourceImpl(
+            offerDao
+        )
+    }
+
+    @Provides
+    fun provideRoomDatabase(
+        context: Context
+    ): OfferRoomDatabase {
+        return Room.databaseBuilder(
+            context,
+            OfferRoomDatabase::class.java,
+            "offer_database"
+        ).build()
+    }
+
+    @Provides
+    fun provideOfferDao(
+        offerRoomDatabase: OfferRoomDatabase
+    ): OfferDao {
+        return offerRoomDatabase.getOfferDao()
     }
 
 }

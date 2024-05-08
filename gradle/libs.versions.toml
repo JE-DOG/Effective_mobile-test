@@ -15,6 +15,9 @@
 #Http
     retrofit = "2.11.0"
 
+#Database
+    room = "2.6.1"
+
 #Other
     dagger = "2.50"
     agp = "8.1.0"
@@ -33,6 +36,10 @@
 #Http
     retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
     retrofit-converter = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
+#Database
+    room = { module = "androidx.room:room-runtime", version.ref = "room" }
+    room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
+    room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
 
 #Xml
     xml-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }

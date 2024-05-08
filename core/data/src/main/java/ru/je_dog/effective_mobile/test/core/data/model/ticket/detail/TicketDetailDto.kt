@@ -1,4 +1,4 @@
-package ru.je_dog.effective_mobile.test.core.data.model.offer.ticket_details
+package ru.je_dog.effective_mobile.test.core.data.model.ticket.detail
 
 import com.google.gson.annotations.SerializedName
 import ru.je_dog.effective_mobile.test.core.data.model.offer.PriceDto
