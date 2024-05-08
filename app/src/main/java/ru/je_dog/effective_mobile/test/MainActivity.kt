@@ -2,10 +2,16 @@ package ru.je_dog.effective_mobile.test
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.view.View
+import androidx.lifecycle.lifecycleScope
 import com.github.terrakok.cicerone.Router
 import com.github.terrakok.cicerone.androidx.AppNavigator
 import com.github.terrakok.cicerone.androidx.FragmentScreen
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
 import ru.je_dog.effective_mobile.test.core.feature.navigation.Coordinator
+import ru.je_dog.effective_mobile.test.core.feature.network.NetworkMonitor
 import ru.je_dog.effective_mobile.test.core.utill.ext.appComponent
 import ru.je_dog.effective_mobile.test.feature.placeholder.PlaceholderFragment
 import ru.je_dog.test.effective_mobile.R
@@ -16,6 +22,8 @@ class MainActivity : AppCompatActivity() {
 
     @Inject
     lateinit var coordinator: Coordinator
+    @Inject
+    lateinit var networkMonitor: NetworkMonitor
     lateinit var binding: ActivityMainBinding
 
     private val navigator = AppNavigator(
@@ -52,6 +60,18 @@ class MainActivity : AppCompatActivity() {
                 return@setOnItemSelectedListener true
             }
         }
+        networkMonitor.broadcastNetworkState()
+            .onEach { connectionState ->
+                Log.d("InternetTag",connectionState.toString())
+                if (connectionState){
+                    notificationText.visibility = View.GONE
+                    notificationText.text = ""
+                }else {
+                    notificationText.visibility = View.VISIBLE
+                    notificationText.text = getString(ru.je_dog.effective_mobile.test.core.feature.R.string.system_check_network_state)
+                }
+            }
+            .launchIn(lifecycleScope)
     }
 
     override fun onResume() {

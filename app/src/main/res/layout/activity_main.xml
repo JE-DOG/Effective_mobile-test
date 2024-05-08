@@ -8,6 +8,16 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <TextView
+        android:id="@+id/notification_text"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:gravity="center"
+        android:background="@color/red"
+        android:visibility="gone"/>
+
     <FrameLayout
         android:id="@+id/main_container"
 
